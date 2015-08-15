@@ -8,7 +8,7 @@ Router.route '/', ->
 ,
 	name: 'home'
 	waitOn: ->
-		Meteor.subscribe 'findTopics', { parentId: $exists: false },
+		subs.subscribe 'findTopics', { parentId: $exists: false },
 			sort:
 				createdAt: -1
 			limit: 50

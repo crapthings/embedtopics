@@ -1,5 +1,13 @@
 template(name='viewTopic')
 
+
+
 	with topic
+
+		.ui-flex-row
+
+			.ui-flex-1x 主节点 {{masterId}}
+
+			.ui-flex-1x 父节点 {{parentId}}
 
 		+topicItem

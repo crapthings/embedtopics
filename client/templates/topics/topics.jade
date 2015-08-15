@@ -11,8 +11,14 @@ template(name='topicItem')
 
 		.ui-flex-row
 
-			a.ui-flex-1x(href='{{pathFor route="viewTopic"}}') {{title}}
-			a(href='#').method-new-topic 回复
+			small(style='margin-right: 8px; font-size: 12px; padding: 4px; border-radius: 2px; background-color: #efefef; color: #999;') {{fromNow createdAt}}
+
+			a(href='#' style='font-size: 12px; padding: 4px; border-radius: 2px; background-color: #efefef; color: #999;').method-new-topic.hide 回复
+
+		.ui-flex-row
+			a.ui-flex-1x.ui-padded-sm(href='{{pathFor route="viewTopic"}}') {{title}}
+
+
 
 		if $.Session.equals 'toggleForm' _id
 

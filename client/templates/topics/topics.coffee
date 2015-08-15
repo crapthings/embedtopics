@@ -3,6 +3,14 @@
 
 Template.topicItem.events
 
+	'mouseover .ui-topic-item': (e, t) ->
+		e.stopImmediatePropagation()
+		($ t.find '.ui-topic-item .hide').show()
+
+	'mouseout .ui-topic-item': (e, t) ->
+		e.stopImmediatePropagation()
+		($ t.find '.ui-topic-item .hide').hide()
+
 	'click .method-new-topic': (e, t) ->
 		e.stopImmediatePropagation()
 		e.preventDefault()
