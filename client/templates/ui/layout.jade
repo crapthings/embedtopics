@@ -1,0 +1,10 @@
+template(name='layout')
+
+	.ui-padded
+
+		a(href='{{pathFor route="home"}}') 首页
+		a(href='#' onclick='Meteor.call("removeTopics")') 清空
+
+		+newTopic
+
+	+yield

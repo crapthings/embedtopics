@@ -1,0 +1,26 @@
+template(name='topicList')
+
+	each topics
+
+		+topicItem
+
+
+template(name='topicItem')
+
+	.ui-flex-column.ui-topic-item
+
+		.ui-flex-row
+
+			a.ui-flex-1x(href='{{pathFor route="viewTopic"}}') {{title}}
+			a(href='#').method-new-topic 回复
+
+		if $.Session.equals 'toggleForm' _id
+
+			form
+				input(type='text' placeholder='title' autofocus).title
+				input(type='submit' value='提交')
+				input(type='button' value='关闭').method-close-form
+
+		each topics
+
+			+topicItem
