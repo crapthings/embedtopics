@@ -1,14 +1,14 @@
 Router.route '/', ->
 	@render 'home',
 		data: ->
-			topics: Topics.find { topicId: $exists: false },
+			topics: Topics.find { parentId: $exists: false },
 				sort:
 					createdAt: -1
 				limit: 50
 ,
 	name: 'home'
 	waitOn: ->
-		Meteor.subscribe 'findTopics', { topicId: $exists: false },
+		Meteor.subscribe 'findTopics', { parentId: $exists: false },
 			sort:
 				createdAt: -1
 			limit: 50

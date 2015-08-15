@@ -7,7 +7,7 @@
 Topics.helpers
 
 	topics: ->
-		Topics.find { _id: @topicId }
+		Topics.find { _id: @parentId }
 
 #
 
