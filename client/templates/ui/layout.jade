@@ -1,10 +1,14 @@
 template(name='layout')
 
 	.ui-padded
+		unless currentUser
+			+sign
+		else
+			+newTopic
+			a(href='#' onclick='Meteor.call("removeTopics")') 清空
+
+	.ui-padded
 
 		a(href='{{pathFor route="home"}}') 首页
-		a(href='#' onclick='Meteor.call("removeTopics")') 清空
-
-		+newTopic
 
 	+yield

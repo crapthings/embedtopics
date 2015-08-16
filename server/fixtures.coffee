@@ -10,14 +10,10 @@ for collection in collections
 
 #
 
-# Meteor.startup ->
+Meteor.startup ->
 
-# 	_(1).times ->
+	#
 
-# 		topicId = Topics.insert
-# 			title: faker.lorem.sentence()
-
-# 		_(10).times ->
-# 			Topics.insert
-# 				topicId: topicId
-# 				title: faker.lorem.sentence()
+	Accounts.createUser
+		username: 'demo'
+		password: 'demo'

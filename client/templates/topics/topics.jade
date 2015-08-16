@@ -11,7 +11,13 @@ template(name='topicItem')
 
 		.ui-flex-row
 
+			small(style='margin-right: 8px; font-size: 12px; padding: 4px; border-radius: 2px; background-color: #efefef; color: #999;') {{user.username}}
+
 			small(style='margin-right: 8px; font-size: 12px; padding: 4px; border-radius: 2px; background-color: #efefef; color: #999;') {{fromNow createdAt}}
+
+			small(style='margin-right: 8px; font-size: 12px; padding: 4px; border-radius: 2px; background-color: #efefef; color: #999;') 子节点 {{stats.topics}}
+
+			small(style='margin-right: 8px; font-size: 12px; padding: 4px; border-radius: 2px; background-color: #efefef; color: #999;') 讨论 {{stats.comments}}
 
 			a(href='#' style='font-size: 12px; padding: 4px; border-radius: 2px; background-color: #efefef; color: #999;').method-new-topic.hide 回复
 
