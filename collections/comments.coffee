@@ -14,6 +14,14 @@ Comments.before.insert (userId, comment) ->
 
 #
 
+Comments.after.insert (userId, comment) ->
+	if comment.masterId
+		Topics.update topic.masterId,
+			$inc:
+				'stats.comments': 1
+
+#
+
 Meteor.methods
 
 	newComment: (opt) ->
@@ -24,12 +32,8 @@ Meteor.methods
 
 if Meteor.isServer
 
-	Meteor.publish 'findComments', ->
-		Comments.find {}
-
 	#
 
-	# Meteor.publishTransformed 'findComments', (selector, options) ->
-	# 	console.log selector, options
-	# 	Topics.find(selector, options).serverTransform
-	# 		user: (comment) -> Meteor.users.findOne comment.userId
+	Meteor.publishTransformed 'findComments', (selector, options) ->
+		Comments.find(selector, options).serverTransform
+			user: (comment) -> Meteor.users.findOne comment.userId

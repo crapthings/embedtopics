@@ -8,10 +8,18 @@ template(name='viewTopic')
 
 			.ui-flex-1x 父节点 {{parentId}}
 
-		+newComment
+		.ui-flex-row
 
-		+topicItem
+			.ui-flex-1x
 
-	each comments
+				+topicItem
 
-		p {{content}}
+			.ui-flex-column.ui-flex-1x
+
+				+newComment
+
+				each ../comments
+
+					.ui-mgb.ui-module
+
+						.ui-padded {{content}}

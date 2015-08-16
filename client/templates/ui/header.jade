@@ -1,0 +1,22 @@
+template(name='ui_header')
+
+	.ui-flex-row.ui-padded.ui-header
+
+		.ui-flex-1x
+
+			a(href='{{pathFor route="home"}}') 首页
+
+			a(href='{{pathFor route="newTopic"}}') 发布
+
+		if currentUser
+
+			.ui-flex-1x
+
+				a(href='#' onclick='Meteor.call("reset");') 重置数据库
+
+		unless currentUser
+			+sign
+		else
+			a(href='#') {{currentUser.username}}
+
+			a(href='#' onclick='Meteor.logout();') 注销

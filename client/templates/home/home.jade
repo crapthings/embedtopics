@@ -1,3 +1,17 @@
 template(name='home')
 
-	+topicList
+	each topics
+
+		.ui-flex-column.ui-mgb.ui-module
+
+			a.ui-flex-row.ui-padded(href='{{pathFor route="viewTopic"}}') {{title}}
+
+			.ui-flex-row.ui-padded(style='padding-top: 0;')
+
+				small.ui-mgr {{user.username}} 发布于 {{fromNow createdAt}}
+
+				small.ui-mgr 节点 {{stats.topics}}
+
+				small.ui-mgr 讨论 {{stats.comments}}
+
+				small.ui-mgr 浏览 {{stats.views}}

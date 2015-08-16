@@ -1,18 +1,26 @@
+$lightColor = #efefef
+$fontColor = #666
+
 body
-	font-size 18px
-	color #666
+	font-size 14px
+	color $fontColor
+	background-color $lightColor
 
 a
 	text-decoration none
-	color #666
+	color $fontColor
 
-.ui-topic-item
-	margin 8px 8px 16px 8px
+input
+button
+textarea
+	width 100%
 	padding 8px
-	padding-left 32px
-	// border-left 1px solid #cdcdcd
-	// border-bottom 1px solid #cdcdcd
-	border 1px solid #efefef
 
-.hide
-	display none
+.ui-module
+	background-color white
+	border 1px solid $lightColor - 5%
+
+.ui-header
+
+	& a
+		padding 0 16px

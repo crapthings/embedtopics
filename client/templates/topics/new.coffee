@@ -10,4 +10,4 @@ Template.newTopic.events
 
 		Meteor.call 'newTopic', opt, (err) ->
 			unless err
-				($ t.find '.title').val ''
+				Router.go 'home'

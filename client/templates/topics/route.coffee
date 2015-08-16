@@ -1,3 +1,5 @@
+#
+
 Router.route '/t/v/:_id', ->
 	@render 'viewTopic',
 		data: ->
@@ -6,7 +8,15 @@ Router.route '/t/v/:_id', ->
 
 ,
 	name: 'viewTopic'
-	waitOn: ->
+	waitOn: -> [
 		subs.subscribe 'findTopic', @params._id
 		subs.subscribe 'findTopics', { parentId: @params._id }
 		subs.subscribe 'findComments', { topicId: @params._id }
+	]
+
+#
+
+Router.route '/t/n', ->
+	@render 'newTopic'
+,
+	name: 'newTopic'

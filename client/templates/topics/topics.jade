@@ -7,7 +7,10 @@ template(name='topicList')
 
 template(name='topicItem')
 
-	.ui-flex-column.ui-topic-item
+	.ui-flex-column.ui-module.ui-topic-item
+
+		.ui-flex-row
+			a.ui-flex-1x.ui-padded-sm(href='{{pathFor route="viewTopic"}}') {{title}}
 
 		.ui-flex-row
 
@@ -20,11 +23,6 @@ template(name='topicItem')
 			small(style='margin-right: 8px; font-size: 12px; padding: 4px; border-radius: 2px; background-color: #efefef; color: #999;') 讨论 {{stats.comments}}
 
 			a(href='#' style='font-size: 12px; padding: 4px; border-radius: 2px; background-color: #efefef; color: #999;').method-new-topic.hide 回复
-
-		.ui-flex-row
-			a.ui-flex-1x.ui-padded-sm(href='{{pathFor route="viewTopic"}}') {{title}}
-
-
 
 		if $.Session.equals 'toggleForm' _id
 

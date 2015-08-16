@@ -2,6 +2,7 @@ Template.newComment.events
 
 	'submit form': (e, t) ->
 		e.preventDefault()
+		console.log @
 		opt =
 			topicId: @_id
 			content: ($ t.find '.content').val()
