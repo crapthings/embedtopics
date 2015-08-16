@@ -2,19 +2,21 @@ template(name='viewTopic')
 
 	with topic
 
-		.ui-flex-row
+		.ui-flex-row.ui-padded-sm
 
-			.ui-flex-1x 主节点 {{masterId}}
+			.ui-flex-1x.ui-padded-sm
+				.ui-padded.ui-module 主节点 {{masterId}}
 
-			.ui-flex-1x 父节点 {{parentId}}
+			.ui-flex-1x.ui-padded-sm
+				.ui-padded.ui-module 父节点 {{parentId}}
 
-		.ui-flex-row
+		.ui-flex-row.ui-padded-sm
 
-			.ui-flex-1x
+			.ui-flex-1x.ui-padded-sm
 
 				+topicItem
 
-			.ui-flex-column.ui-flex-1x
+			.ui-flex-column.ui-flex-1x.ui-padded-sm
 
 				+newComment
 

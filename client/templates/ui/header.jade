@@ -6,8 +6,6 @@ template(name='ui_header')
 
 			a(href='{{pathFor route="home"}}') 首页
 
-			a(href='{{pathFor route="newTopic"}}') 发布
-
 		if currentUser
 
 			.ui-flex-1x
@@ -17,6 +15,8 @@ template(name='ui_header')
 		unless currentUser
 			+sign
 		else
+			a(href='{{pathFor route="newTopic"}}') 发布
+
 			a(href='#') {{currentUser.username}}
 
 			a(href='#' onclick='Meteor.logout();') 注销
